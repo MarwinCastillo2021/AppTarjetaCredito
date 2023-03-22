@@ -1,0 +1,61 @@
+
+<form [formGroup]="form" (ngSubmit)="guardarTarjeta()">
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa-solid fa-user fa-xl fa-fw" [class.green-icon]="this.form.get('titular').valid"
+                    [class.red-icon]="this.form.get('titular').invalid"></i>
+                </div>
+             </div>
+            <input type="text" class="form-control" formControlName="titular" placeholder="Titular">
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <div class="input-group-text bg-white">
+                    <i class="fa-solid fa-credit-card fa-xl fa-fw"></i>
+                </div>
+             </div>
+            <input type="text" class="form-control" formControlName="numeroTarjeta" maxlength="16" placeholder="Numero de Tarjeta">
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="form-group col md-7">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text bg-white">
+                            <i class="fa-solid fa-calendar-days fa-xl fa-fw"></i>
+                        </div>
+                     </div>
+                    <input type="text" class="form-control" formControlName="fechaExpiracion" maxlength="5"  placeholder="MM/AA">
+                </div>
+            </div>
+        </div>
+        <div class="form-group col md-5">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text bg-white">
+                            <i class="fa-solid fa-key fa-xl fa-fw"></i>
+                        </div>
+                     </div>
+                    <input type="text" class="form-control" formControlName="cw" maxlength="3" placeholder="CW">
+                </div>
+            </div>
+        </div>   
+    </div>
+    <br>
+    <div class="form group">
+        <div class="d-grid col-12">
+            <button class="btn btn-success btn-lg" [disabled]="form.invalid" type="submit"> 
+                <i class="fa-solid fa-database"></i>
+                Aceptar
+            </button>
+        </div>
+    </div>
+</form>

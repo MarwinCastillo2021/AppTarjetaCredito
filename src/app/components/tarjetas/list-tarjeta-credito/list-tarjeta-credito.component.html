@@ -1,0 +1,20 @@
+<table class="table table-sm">
+    <tr *ngFor="let tarjeta of tarjetas">
+        <td>{{tarjeta.id}}</td>
+        <td>{{tarjeta.titular}}</td>
+        <td>{{tarjeta.numeroTarjeta}}</td>
+        <td>{{tarjeta.fechaExpiracion}}</td>
+        <td>
+            <button type="button" class="btn btn-outline-white" (click)="editarTarjeta(tarjeta)" >    
+                <i class="fa-regular fa-pen-to-square text-info" style="cursor: pointer;"></i>
+            </button>
+        </td>
+        <td>
+            <button type="button"class="btn btn-outline-white" (click)="eliminarTarjeta(tarjeta.id)">
+                <i class="fa-solid fa-trash text-danger" style="cursor: pointer;"></i>
+            </button>
+        </td>
+    </tr>
+</table>
+
+
